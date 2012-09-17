@@ -67,12 +67,12 @@ service "jetty" do
 end
 
 # Create the webroot if it doesn't exist
-directory "#{node['railo334']['install_path']}#{node['cf902']['webroot']}" do
+directory "#{node['railo334']['install_path']}#{node['railo334']['webroot']}" do
   owner "vagrant"
   group "vagrant"
   mode "0755"
   action :create
-  not_if { File.directory?("#{node['railo334']['install_path']}#{node['cf902']['webroot']}") }
+  not_if { File.directory?("#{node['railo334']['install_path']}#{node['railo334']['webroot']}") }
 end
 
 # Point Railo to custom webroot 
